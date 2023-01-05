@@ -1,0 +1,45 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int line = n - 1;
+        int star = 1;
+        int blank = n - 1;
+
+        while (line != 0) {
+            for(int i = 0; i < blank; i++){
+                System.out.print(" ");
+            } for(int j = 0; j < star; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+            line--;
+            star+=2;
+            blank--;
+        }
+        for (int i = 0; i <(2*n-1); i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+
+        line = n -1;
+        star = 2 * n -3;
+        blank = 1;
+
+        while (line != 0) {
+            for (int i = 0; i < blank; i++) {
+                System.out.print(" ");
+            } for(int j = 0; j < star; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+            line--;
+            star-=2;
+            blank++;
+        }
+    }
+}
